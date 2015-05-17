@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tabindex experiment</title>
+</head>
+
+<body>
+
+  <h1>Form inside a container with tabindex="-1"</h1>
+
+  <p>Example 1. Voiceover reads everything inside a container each time a text
+  field gains focus.</p>
+
+  <div tabindex="-1" >
+
+      <label for="my-name">Please enter your name</label>
+      <input type="text" name="name" id="my-name"/>
+
+      <label for="my-email">Please enter your email</label>
+      <input type="text" name="email" id="my-email"/>
+
+  </div>
+
+  <p>Example 2. Voiceover read text field descriptions correctly if role="group"
+  is specified on a container with tabindex="-1"</p>
+
+  <div tabindex="-1" role="group">
+
+      <label for="my-name">Please enter your name</label>
+      <input type="text" name="name" id="my-name"/>
+
+      <label for="my-email">Please enter your email</label>
+      <input type="text" name="email" id="my-email"/>
+
+  </div>
+
+  <p>Example 3. Voiceover reads text field descriptions incorrectly
+    even when form is wrapped in a div with role="group". Div with role="group"
+    is a child element of the div with tabindex="-1"</p>
+
+  <div tabindex="-1" >
+
+    <div role="group">
+      <label for="my-name">Please enter your name</label>
+      <input type="text" name="name" id="my-name"/>
+
+      <label for="my-email">Please enter your email</label>
+      <input type="text" name="email" id="my-email"/>
+    </div>
+
+  </div>
+
+</body>
+</html>
