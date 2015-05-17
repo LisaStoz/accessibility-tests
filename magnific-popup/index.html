@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Magnific popup experiment</title>
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="magnific-popup.css">
+
+  <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <!-- Magnific Popup core JS file -->
+  <script src="jquery.magnific-popup.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    $('#trigger').magnificPopup({
+      type:'inline',
+      callbacks: {
+        open: function() {
+          $('.mfp-wrap').attr('role', 'group');
+        }
+      }
+
+    });
+  });
+
+  </script>
+
+  <style>
+    .my-popup {
+      background: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <a href="#my-form" id="trigger">Open popup</a>
+
+  <div id="my-form" class="mfp-hide my-popup">
+
+      <label for="my-name">Please enter your name</label>
+      <input type="text" name="name" id="my-name"/>
+
+      <label for="my-email">Please enter your email</label>
+      <input type="text" name="email" id="my-email"/>
+
+  </div>
+
+
+
+</body>
+</html>
